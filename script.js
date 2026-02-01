@@ -10,15 +10,15 @@ try{
         await mongoose.connect('mongodb://127.0.0.1:27017/todo');
     }
     main()
-    .then(console.log("Connected to DB"))
+    .then(console.log("Connected to DB"));
 }catch(err){
     alert("Some Error occured Contact Developer");
     console.log(err);
-}
+};
 //------------------------------------------------------------------------------------------------
 
 // yaha ham schema ko require karenge aur ek collection banayenge
-const schema = require("./schema")
+const schema = require("./schema");
 const Task = new mongoose.model("Task",schema);
 // ------------------------------------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ app.use(methodOverride("_method"));
 app.listen(port, function(){
     console.log("Server Started")
     
-})
+});
 //-------------------------------------------------------------------------------------------------------
 
 // yaha ham home page par get req bhejenge aur saare task listed honge
@@ -53,9 +53,9 @@ app.get("/", async function(req,res){
     }catch(err){
         alert("Some Error Occured Contact Developer");
         console.log(err);
-    }
+    };
     
-})
+});
 //---------------------------------------------------------------------------------------------------------
 
 // yaha par ham post req bhejenge new task ko database mei add karne ke liye
@@ -84,7 +84,7 @@ app.delete("/task/:id/delete", async function(req,res){
     }catch(err){
         alert("Some Error Occured Contact Developer");
         console.log(err);
-    }
+    };
 });
 //---------------------------------------------------------------------------------------------------------
 
@@ -97,7 +97,7 @@ app.get("/task/:id/edit", async function(req,res){
     }catch(err){
         alert("Some error occured contact Developer");
         console.log(err);
-    }
+    };
 });
 //----------------------------------------------------------------------------------------------------------
 
@@ -112,6 +112,6 @@ app.put("/task/:id/edit", async function(req,res){
     }catch(err){
         alert("Some Error Occured Contact Developer");
         console.log(err);
-    }
+    };
 });
 //-----------------------------------------------------------------------------------------------------------
