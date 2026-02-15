@@ -51,7 +51,7 @@
             let tasks = await Task.find();
             res.render("index.ejs",{tasks});
         }catch(err){
-            alert("Some Error Occured Contact Developer");
+            res.send("Some Error Occured Contact Developer");
             console.log(err);
         };
         
@@ -67,7 +67,7 @@
             res.redirect("/");
         }
         catch(err){
-            alert("Some Error Occured Contact Developer");
+            res.send("Some Error Occured Contact Developer");
             console.log(err);
         }
         
@@ -82,7 +82,7 @@
             console.log("Data Deleted");
             res.redirect("/");
         }catch(err){
-            alert("Some Error Occured Contact Developer");
+            res.send("Some Error Occured Contact Developer");
             console.log(err);
         };
     });
@@ -95,7 +95,7 @@
             let searchedChat = await Task.findById(`${id}`);
             res.render("edit.ejs",{searchedChat,id});
         }catch(err){
-            alert("Some error occured contact Developer");
+            res.send("Some error occured contact Developer");
             console.log(err);
         };
     });
@@ -110,7 +110,7 @@
             console.log("Data Updated to",updatedChat);
             res.redirect("/");
         }catch(err){
-            alert("Some Error Occured Contact Developer");
+            res.send("Some Error Occured Contact Developer");
             console.log(err);
         };
     });
